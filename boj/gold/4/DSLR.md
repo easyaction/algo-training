@@ -105,11 +105,11 @@ def S(num: int) -> int:
 
 
 def L(num: int) -> int:
-    return (num * 10 + num // 1000) % 10000
+    return (num % 1000) * 10 + num // 1000
 
 
 def R(num: int) -> int:
-    return (num // 10 + num % 10 * 1000) % 10000
+    return num // 10 + (num % 10) * 1000
 
 
 func_to_str = {D: "D", S: "S", L: "L", R: "R"}
@@ -165,3 +165,5 @@ if __name__ == "__main__":
 	그냥 L, R을 계산하는게 더 간단
 결과를 더하면서 저장하지 말고, 이전 단계를 저장하고 어떻게 그 단계에 도달했는지 저장하도록 변경
 	마지막에 역추적하면서 결과를 합치기
+zip func 활용 가능
+	
